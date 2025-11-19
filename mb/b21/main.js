@@ -18,7 +18,7 @@ import { initProgress } from "./component/progress.js";
 import FloatingBall from "./component/common/floatingBall.js"
 
 
-const testData = await getLibraryItemWithChapters("english.ge32.site/mb/library/index/libraryIndex.json","wonder",(done,tol,url,res)=>{
+const testData = await getLibraryItemWithChapters("/mb/library/index/libraryIndex.json","wonder",(done,tol,url,res)=>{
     document.dispatchEvent(new CustomEvent('initStep', { detail: `加载文章数据 <br>共(${done}/${tol}) ${url} ${res.ok ? "加载成功" : "<span style = 'color:red;'>res.error.errorMessage</span>"}` }));
 })
 console.log("测试数据",testData);
