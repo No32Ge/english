@@ -1,0 +1,9 @@
+.chinese-text {
+    font-size: 1rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    padding-left: 15px;
+    border-left: 2px solid #bdc3c7;
+    background: #0a0a0a url('http://english.ge32.site/mb/reps/sea-4839056.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
