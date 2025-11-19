@@ -16,7 +16,7 @@
         "source": {
             "catalog": "wonder",
             "subPrefix": "Wonder-Part-",
-            "baseURL": "english.ge32.site/mb/library/articles",
+            "baseURL": "/mb/library/articles",
             "chapterCount": 8
         }
     }
