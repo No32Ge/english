@@ -14205,5 +14205,948 @@
                 "cn": "句子"
             }
         }
+    },
+    {
+        "id": "wonder_excerpt_pictures",
+        "title": "Pictures",
+        "info": {
+            "author": "R.J. Palacio",
+            "source": "Wonder",
+            "level": "B2",
+            "tags": [
+                "acceptance",
+                "friendship",
+                "graduation",
+                "family",
+                "photography",
+                "epiphany"
+            ],
+            "link": "https://example.com/original-source",
+            "variants": null
+        },
+        "paras": [
+            {
+                "id": 1,
+                "en": "Afterward there was a reception for the fifth and sixth graders under a huge white tent in the back of the school. All the kids found their parents, and I didn't mind at all when Mom and Dad hugged me like crazy, or when Via wrapped her arms around me and swung me left and right about twenty times. Then Poppa and Tata hugged me, and Aunt Kate and Uncle Po, and Uncle Ben—everyone kind of teary-eyed and wet-cheeked. But Miranda was the funniest: she was crying more than anyone and squeezed me so tight that Via had to practically pry her off of me, which made them both laugh.",
+                "cn": "之后，在学校后面的一个巨大白色帐篷下为五年级和六年级的学生举行了一个招待会。所有的孩子都找到了他们的父母，当爸爸妈妈疯狂地拥抱我时，我一点也不介意，当维娅用双臂环绕着我，把我左右摇晃了大约二十次时，我也不介意。然后波帕和塔塔拥抱了我，还有凯特姑姑和波叔叔，还有本叔叔——每个人都有点眼含泪水，脸颊湿润。但米兰达最搞笑：她比任何人都哭得厉害，把我抱得那么紧，以至于维娅几乎要把她从我身上撬开，这让她们俩都笑了。",
+                "vocab": [
+                    {
+                        "word": "reception",
+                        "ph": "/rɪˈsepʃn/",
+                        "pos": "n",
+                        "mean": "招待会",
+                        "ex": "There will be a small reception after the wedding ceremony."
+                    },
+                    {
+                        "word": "like crazy",
+                        "ph": "/laɪk ˈkreɪzi/",
+                        "pos": "idiom",
+                        "mean": "疯狂地",
+                        "ex": "He was working like crazy to finish the project on time."
+                    },
+                    {
+                        "word": "swing",
+                        "ph": "/swɪŋ/",
+                        "pos": "v",
+                        "mean": "摇摆",
+                        "ex": "The child loved to swing on the playground."
+                    },
+                    {
+                        "word": "teary-eyed",
+                        "ph": "/ˈtɪəri aɪd/",
+                        "pos": "adj",
+                        "mean": "眼含泪水的",
+                        "ex": "She became teary-eyed during the sad movie."
+                    },
+                    {
+                        "word": "wet-cheeked",
+                        "ph": "/wet tʃiːkt/",
+                        "pos": "adj",
+                        "mean": "脸颊湿润的（因流泪）",
+                        "ex": "The little girl was wet-cheeked after her fall, but she was okay."
+                    },
+                    {
+                        "word": "squeeze",
+                        "ph": "/skwiːz/",
+                        "pos": "v",
+                        "mean": "紧抱；挤压",
+                        "ex": "She gave her old friend a tight squeeze when she saw her."
+                    },
+                    {
+                        "word": "pry someone off",
+                        "ph": "/praɪ ˈsʌmwʌn ɔːf/",
+                        "pos": "phr v",
+                        "mean": "把某人撬开/掰开",
+                        "ex": "The puppy was clinging to my leg, and I had to gently pry it off."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "so_tight_that",
+                        "name": "so... that... 结果状语从句",
+                        "category": "C",
+                        "level": "B2",
+                        "pattern": "so + adj/adv + that + result clause",
+                        "components": [
+                            {
+                                "slot": "so",
+                                "role": "程度副词",
+                                "pos": [
+                                    "adv"
+                                ]
+                            },
+                            {
+                                "slot": "that",
+                                "role": "连词",
+                                "pos": [
+                                    "conj"
+                                ]
+                            }
+                        ],
+                        "function": "用于强调程度之深以至于产生了某种结果。'...squeezed me so tight that Via had to practically pry her off...' 强调了拥抱的力度及其导致的后果。",
+                        "example": {
+                            "en": "The music was so loud that we couldn't hear each other speak.",
+                            "cn": "音乐声太大了，我们都听不清对方说话。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种非常常见的因果关系表达方式。"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "en": "Everyone started taking pictures of me and pulling out their Flips, and then Dad got me, Summer, and Jack together for a group shot. We put our arms around each other's shoulders, and for the first time I can remember, I wasn't even thinking about my face. I was just smiling a big fat happy smile for all the different cameras clicking away at me. Flash, flash, click, click : smiling away as Jack's parents and Summer's mom started clicking. Then Reid and Maya came over. Flash, flash, click, click. And then Charlotte came over and asked if she could take a picture with us, and we were like, \"Sure, of course!\" And then Charlotte's parents were snapping away at our little group along with everyone else's parents.",
+                "cn": "每个人都开始给我拍照，并拿出他们的Flip摄像机，然后爸爸把我和萨默、杰克聚在一起拍了张合影。我们互相搭着对方的肩膀，在我记忆中，这是第一次，我甚至没有在想我的脸。我只是为所有对着我咔嚓作响的相机露出了一个大大的、幸福的笑容。闪光，闪光，咔嚓，咔嚓：在杰克的父母和萨默的妈妈开始按快门时，我一直微笑着。然后里德和玛雅过来了。闪光，闪光，咔嚓，咔嚓。接着夏洛特走过来问她是否能和我们合影，我们就说：“当然，当然可以！” 然后夏洛特的父母和其他所有人的父母一起，对着我们这个小团体不停地拍照。",
+                "vocab": [
+                    {
+                        "word": "pull out",
+                        "ph": "/pʊl aʊt/",
+                        "pos": "phr v",
+                        "mean": "拿出",
+                        "ex": "He pulled out his wallet to pay for the coffee."
+                    },
+                    {
+                        "word": "group shot",
+                        "ph": "/ɡruːp ʃɒt/",
+                        "pos": "n phr",
+                        "mean": "合影",
+                        "ex": "Let's get everyone together for a group shot before we leave."
+                    },
+                    {
+                        "word": "big fat",
+                        "ph": "/bɪɡ fæt/",
+                        "pos": "adj phr",
+                        "mean": "（非正式，用于强调）大大的",
+                        "ex": "After winning, he had a big fat smile on his face all day."
+                    },
+                    {
+                        "word": "click away",
+                        "ph": "/klɪk əˈweɪ/",
+                        "pos": "phr v",
+                        "mean": "不停地按快门",
+                        "ex": "The photographers were clicking away as the celebrity walked down the red carpet."
+                    },
+                    {
+                        "word": "snap away",
+                        "ph": "/snæp əˈweɪ/",
+                        "pos": "phr v",
+                        "mean": "不停地拍照",
+                        "ex": "She was snapping away with her new camera all through the vacation."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "onomatopoeia_and_repetition_for_atmosphere",
+                        "name": "用于营造氛围的拟声词与重复",
+                        "category": "R",
+                        "level": "B2",
+                        "pattern": "Repetition of sound words.",
+                        "components": [
+                            {
+                                "slot": "sound words",
+                                "role": "拟声词",
+                                "pos": [
+                                    "n"
+                                ]
+                            }
+                        ],
+                        "function": "通过重复使用拟声词 'Flash, flash, click, click'，作者生动地再现了被众多相机拍摄的场景。这种手法不仅模仿了相机的声音，还创造了一种快速、兴奋、如同明星走红毯般的气氛，突显了主角此刻作为焦点的、积极的体验。",
+                        "example": {
+                            "en": "Drip, drip, drip. The sound of the leaky faucet kept him awake all night.",
+                            "cn": "滴，滴，滴。漏水的水龙头声让他整夜未眠。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过声音来构建场景和氛围的有效技巧。"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "en": "And the next thing I knew, the two Maxes had come over, and Henry and Miles, and Savanna. Then Amos came over, and Ximena. And we were all in this big tight huddle as parents clicked away like we were on a red carpet somewhere. Luca. Isaiah. Nino. Pablo. Tristan. Ellie. I lost track of who else came over. Everybody, practically. All I knew for sure is that we were all laughing and squeezing in tight against each other, and no one seemed to care if it was my face that was next to theirs or not. In fact, and I don't mean to brag here, but it kind of felt like everyone wanted to get close to me.",
+                "cn": "接着我一转眼，那两个麦克斯过来了，还有亨利和迈尔斯，以及萨凡纳。然后阿莫斯过来了，还有西梅纳。我们所有人都挤在一个紧密的大圈子里，家长们不停地按着快门，就像我们在某个红毯上一样。卢卡。以赛亚。尼诺。巴勃罗。特里斯坦。艾莉。我都记不清还有谁过来了。几乎是所有人。我唯一确定的是，我们都在大笑，紧紧地挤在一起，似乎没有人介意紧挨着他们的是不是我的脸。事实上，我不是想在这里吹牛，但感觉就像每个人都想靠近我一样。",
+                "vocab": [
+                    {
+                        "word": "the next thing I knew",
+                        "ph": "/ðə nekst θɪŋ aɪ njuː/",
+                        "pos": "idiom",
+                        "mean": "接着我一转眼；紧接着",
+                        "ex": "I was walking down the street, and the next thing I knew, I was on the ground."
+                    },
+                    {
+                        "word": "huddle",
+                        "ph": "/ˈhʌdl/",
+                        "pos": "n",
+                        "mean": "挤在一起的一群人",
+                        "ex": "The players gathered in a huddle to discuss their strategy."
+                    },
+                    {
+                        "word": "red carpet",
+                        "ph": "/red ˈkɑːrpɪt/",
+                        "pos": "n phr",
+                        "mean": "红地毯（象征名流场合）",
+                        "ex": "The movie stars walked down the red carpet at the premiere."
+                    },
+                    {
+                        "word": "lose track of",
+                        "ph": "/luːz træk əv/",
+                        "pos": "phr v",
+                        "mean": "搞不清；忘记",
+                        "ex": "There were so many people at the party, I lost track of who I had spoken to."
+                    },
+                    {
+                        "word": "practically",
+                        "ph": "/ˈpræktɪkli/",
+                        "pos": "adv",
+                        "mean": "几乎",
+                        "ex": "The room was so crowded that we were practically sitting on top of each other."
+                    },
+                    {
+                        "word": "squeeze in",
+                        "ph": "/skwiːz ɪn/",
+                        "pos": "phr v",
+                        "mean": "挤进去",
+                        "ex": "We all had to squeeze in to fit in the small elevator."
+                    },
+                    {
+                        "word": "brag",
+                        "ph": "/bræɡ/",
+                        "pos": "v",
+                        "mean": "吹牛",
+                        "ex": "He's always bragging about how much money he makes."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "final_epiphany_of_acceptance",
+                        "name": "关于接纳的最终顿悟",
+                        "category": "R",
+                        "level": "C1",
+                        "pattern": "A concluding statement of realization, softened by a disclaimer.",
+                        "components": [
+                            {
+                                "slot": "disclaimer",
+                                "role": "免责声明",
+                                "pos": [
+                                    "phr"
+                                ]
+                            },
+                            {
+                                "slot": "realization",
+                                "role": "顿悟",
+                                "pos": [
+                                    "S"
+                                ]
+                            }
+                        ],
+                        "function": "这个段落的结尾是全书最重要的顿悟时刻之一。叙述者首先用 'I don't mean to brag' 来表现自己的谦虚和对这一新体验的难以置信，然后才说出核心感受：'...it kind of felt like everyone wanted to get close to me'。这标志着他社会地位的彻底逆转，从一个被排斥的对象，变成了一个被渴望接近的中心。这个顿悟是他自我接纳和被社会接纳的最终证明。",
+                        "example": {
+                            "en": "I don't mean to sound arrogant, but for the first time, I felt like I was the best player on the team.",
+                            "cn": "我不是想听起来自大，但这是我第一次感觉自己是队里最棒的球员。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过温和的措辞来表达一个深刻、颠覆性认识的有效技巧。"
+                    }
+                ]
+            }
+        ],
+        "gram_types": {
+            "S": {
+                "en": "Sentence Structure",
+                "cn": "句子结构"
+            },
+            "T": {
+                "en": "Tense",
+                "cn": "时态"
+            },
+            "C": {
+                "en": "Clause",
+                "cn": "从句"
+            },
+            "P": {
+                "en": "Punctuation",
+                "cn": "标点"
+            },
+            "W": {
+                "en": "Word Form / Morphology",
+                "cn": "词形变化"
+            },
+            "F": {
+                "en": "Figurative Language",
+                "cn": "修辞"
+            },
+            "R": {
+                "en": "Rhetoric",
+                "cn": "修辞手法"
+            },
+            "O": {
+                "en": "Others",
+                "cn": "其他"
+            }
+        },
+        "pos_types": {
+            "n": {
+                "en": "noun",
+                "cn": "名词"
+            },
+            "v": {
+                "en": "verb",
+                "cn": "动词"
+            },
+            "adj": {
+                "en": "adjective",
+                "cn": "形容词"
+            },
+            "adv": {
+                "en": "adverb",
+                "cn": "副词"
+            },
+            "prep": {
+                "en": "preposition",
+                "cn": "介词"
+            },
+            "conj": {
+                "en": "conjunction",
+                "cn": "连词"
+            },
+            "pron": {
+                "en": "pronoun",
+                "cn": "代词"
+            },
+            "det": {
+                "en": "determiner",
+                "cn": "限定词"
+            },
+            "int": {
+                "en": "interjection",
+                "cn": "感叹词"
+            },
+            "phr": {
+                "en": "phrase",
+                "cn": "短语"
+            },
+            "phr v": {
+                "en": "phrasal verb",
+                "cn": "动词短语"
+            },
+            "n phr": {
+                "en": "noun phrase",
+                "cn": "名词短语"
+            },
+            "adj phr": {
+                "en": "adjective phrase",
+                "cn": "形容词短语"
+            },
+            "modal v": {
+                "en": "modal verb",
+                "cn": "情态动词"
+            },
+            "idiom": {
+                "en": "idiom",
+                "cn": "习语"
+            },
+            "S": {
+                "en": "sentence",
+                "cn": "句子"
+            }
+        }
+    },
+    {
+        "id": "wonder_excerpt_floating",
+        "title": "Floating",
+        "info": {
+            "author": "R.J. Palacio",
+            "source": "Wonder",
+            "level": "B2",
+            "tags": [
+                "graduation",
+                "acceptance",
+                "recognition",
+                "emotions",
+                "climax"
+            ],
+            "link": "https://example.com/original-source",
+            "variants": null
+        },
+        "paras": [
+            {
+                "id": 1,
+                "en": "People started applauding before Mr. Tushman's words actually registered in my brain. I heard Maya, who was next to me, give a little happy scream when she heard my name, and Miles, who was on the other side of me, patted my back. \"Stand up, get up!\" said kids all around me, and I felt lots of hands pushing me upward out of my seat, guiding me to the edge of the row, patting my back, high-fiving me. \"Way to go, Auggie!\" \"Nice going, Auggie!\" I even started hearing my name being chanted: \"Aug-gie! Aug-gie! Aug-gie!\" I looked back and saw Jack leading the chant, fist in the air, smiling and signaling for me to keep going, and Amos shouting through his hands: \"Woo-hoo, little dude!\"",
+                "cn": "在塔什曼先生的话真正进入我脑海之前，人们就开始鼓掌了。我听到旁边的玛雅在听到我的名字时发出了一声小小的开心的尖叫，而我另一边的迈尔斯则拍了拍我的背。“站起来，起来！” 我周围的孩子们说，我感觉到很多只手把我从座位上向上推，引导我到这一排的边缘，拍着我的背，和我击掌。“好样的，奥吉！” “干得漂亮，奥吉！” 我甚至开始听到有人在喊我的名字：“奥-吉！奥-吉！奥-吉！” 我回头一看，看到杰克正领着大家喊口号，拳头举在空中，微笑着示意我继续走，还有阿莫斯用手拢着嘴喊道：“喔呼，小哥们！\"",
+                "vocab": [
+                    {
+                        "word": "register",
+                        "ph": "/ˈredʒɪstər/",
+                        "pos": "v",
+                        "mean": "（信息）被理解；被记住",
+                        "ex": "His warning didn't register until it was too late."
+                    },
+                    {
+                        "word": "pat someone's back",
+                        "ph": "/pæt ˈsʌmwʌnz bæk/",
+                        "pos": "idiom",
+                        "mean": "拍某人的背（表示鼓励或祝贺）",
+                        "ex": "The coach patted the player's back and said, 'Good game!'"
+                    },
+                    {
+                        "word": "high-five",
+                        "ph": "/haɪ faɪv/",
+                        "pos": "v",
+                        "mean": "击掌",
+                        "ex": "After they won the game, the teammates started high-fiving each other."
+                    },
+                    {
+                        "word": "way to go",
+                        "ph": "/weɪ tuː ɡoʊ/",
+                        "pos": "idiom",
+                        "mean": "好样的",
+                        "ex": "You finished the race! Way to go!"
+                    },
+                    {
+                        "word": "chant",
+                        "ph": "/tʃænt/",
+                        "pos": "v",
+                        "mean": "反复呼喊（口号）",
+                        "ex": "The crowd started to chant the team's name."
+                    },
+                    {
+                        "word": "fist in the air",
+                        "ph": "/fɪst ɪn ði er/",
+                        "pos": "idiom",
+                        "mean": "拳头举在空中（表示胜利或支持）",
+                        "ex": "She raised her fist in the air after scoring the winning goal."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "cumulative_sentencing_for_overwhelm",
+                        "name": "用于表现不知所措的累积句",
+                        "category": "S",
+                        "level": "B2",
+                        "pattern": "A long sentence with multiple clauses and phrases.",
+                        "components": [
+                            {
+                                "slot": "clause/phrase",
+                                "role": "分句/短语",
+                                "pos": [
+                                    "phr",
+                                    "clause"
+                                ]
+                            }
+                        ],
+                        "function": "通过一个包含多个动作的长句（'...I felt lots of hands pushing me..., guiding me..., patting my back, high-fiving me.'），作者营造了一种被积极、友好的行为浪潮淹没的感觉。这种累积的结构生动地传达了主角在那个瞬间所感受到的、令人不知所措的善意和支持。",
+                        "example": {
+                            "en": "The little boy ran into the house, dropping his bag by the door, kicking off his shoes, and shouting for his mom.",
+                            "cn": "小男孩跑进屋里，把包扔在门边，踢掉鞋子，大声喊着妈妈。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过句法结构来模仿情感体验的写作技巧。"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "en": "Then I saw Summer smiling as I walked past her row, and when she saw me look at her, she gave me a secret little thumbs-up and mouthed a silent \"cool beans\" to me. I laughed and shook my head like I couldn't believe it.",
+                "cn": "然后我走过萨默那一排时，看到她在微笑，当她看到我看她时，她给了我一个秘密的小小的“赞”，并无声地对我做了个“酷毙了”的口型。我笑了，摇着头，好像我不敢相信这一切。",
+                "vocab": [
+                    {
+                        "word": "walk past",
+                        "ph": "/wɔːk pæst/",
+                        "pos": "phr v",
+                        "mean": "走过",
+                        "ex": "He didn't even say hello as he walked past me."
+                    },
+                    {
+                        "word": "thumbs-up",
+                        "ph": "/ˈθʌmz ʌp/",
+                        "pos": "n",
+                        "mean": "翘起大拇指（表示赞成）",
+                        "ex": "She gave me a thumbs-up to show that everything was okay."
+                    },
+                    {
+                        "word": "mouth",
+                        "ph": "/maʊθ/",
+                        "pos": "v",
+                        "mean": "（无声地）用口型说",
+                        "ex": "He mouthed the words 'I love you' from across the room."
+                    },
+                    {
+                        "word": "cool beans",
+                        "ph": "/kuːl biːnz/",
+                        "pos": "idiom",
+                        "mean": "（俚语）酷毙了；太好了",
+                        "ex": "\"I finished the project!\" \"Cool beans! Let's celebrate.\""
+                    },
+                    {
+                        "word": "shake one's head",
+                        "ph": "/ʃeɪk wʌnz hed/",
+                        "pos": "phr",
+                        "mean": "摇头（此处表示难以置信）",
+                        "ex": "He shook his head in amazement at the magician's trick."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "intimate_communication_in_a_public_setting",
+                        "name": "公共场合中的亲密交流",
+                        "category": "R",
+                        "level": "B2",
+                        "pattern": "Using non-verbal cues for private communication.",
+                        "components": [
+                            {
+                                "slot": "non-verbal cue",
+                                "role": "非语言线索",
+                                "pos": [
+                                    "n phr"
+                                ]
+                            }
+                        ],
+                        "function": "在公共的、喧闹的场合中，萨默通过“秘密的小小的‘赞’”和无声的口型这些非语言的、私密的交流方式，与主角分享了一个只属于他们俩的祝贺时刻。这与周围的公开欢呼形成对比，突显了他们之间深厚、独特的友谊。",
+                        "example": {
+                            "en": "Across the crowded room, she caught his eye and gave a small, secret smile.",
+                            "cn": "在拥挤的房间另一头，她与他对视，并给了一个小小的、秘密的微笑。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过细微互动来展示人物关系的写作技巧。"
+                    }
+                ]
+            },
+            {
+                "id": 3,
+                "en": "I really couldn't believe it. I think I was smiling. Maybe I was beaming, I don't know. As I walked up the aisle toward the stage, all I saw was a blur of happy bright faces looking at me, and hands clapping for me. And I heard people yelling things out at me: \"You deserve it, Auggie!\" \"Good for you, Auggie!\" I saw all my teachers in the aisle seats, Mr. Browne and Ms. Petosa and Mr. Roche and Mrs. Atanabi and Nurse Molly and all the others: and they were cheering for me, woo-hoo ing and whistling.",
+                "cn": "我真的不敢相信。我想我当时在微笑。也许是在放光彩地笑，我不知道。当我沿着过道走向舞台时，我所能看到的只是一片模糊的、快乐明亮的脸庞看着我，还有为我鼓掌的双手。我听到人们对我大喊着：“你应得的，奥吉！” “好样的，奥吉！” 我看到我所有的老师都坐在过道边的座位上，布朗先生、佩托萨女士、罗奇先生、阿塔纳比夫人、莫莉护士和其他所有人：他们都在为我欢呼，大喊“喔呼”并吹着口哨。",
+                "vocab": [
+                    {
+                        "word": "beam",
+                        "ph": "/biːm/",
+                        "pos": "v",
+                        "mean": "（高兴地）微笑",
+                        "ex": "She was beaming with pride at her son's graduation."
+                    },
+                    {
+                        "word": "blur",
+                        "ph": "/blɜːr/",
+                        "pos": "n",
+                        "mean": "模糊的一片",
+                        "ex": "Without my glasses, the world is just a blur."
+                    },
+                    {
+                        "word": "deserve",
+                        "ph": "/dɪˈzɜːrv/",
+                        "pos": "v",
+                        "mean": "应得",
+                        "ex": "After all her hard work, she deserves the award."
+                    },
+                    {
+                        "word": "good for you",
+                        "ph": "/ɡʊd fɔːr juː/",
+                        "pos": "idiom",
+                        "mean": "好样的；真为你高兴",
+                        "ex": "You won the race? Good for you!"
+                    },
+                    {
+                        "word": "woo-hoo",
+                        "ph": "/ˈwuː huː/",
+                        "pos": "v",
+                        "mean": "喔呼（用作动词）",
+                        "ex": "The crowd was cheering and woo-hoo ing when the band came on stage."
+                    },
+                    {
+                        "word": "whistle",
+                        "ph": "/ˈwɪsl/",
+                        "pos": "v",
+                        "mean": "吹口哨",
+                        "ex": "The audience started to whistle and cheer for an encore."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "language_of_disbelief_and_dissociation",
+                        "name": "表达不信与抽离感的语言",
+                        "category": "R",
+                        "level": "C1",
+                        "pattern": "Using phrases of uncertainty to describe a powerful experience.",
+                        "components": [
+                            {
+                                "slot": "uncertainty phrase",
+                                "role": "不确定性短语",
+                                "pos": [
+                                    "phr"
+                                ]
+                            }
+                        ],
+                        "function": "通过使用一系列表示不确定和抽离感的短语（'I really couldn't believe it', 'I think I was smiling', 'Maybe I was beaming, I don't know'），作者深刻地描绘了主角在面对压倒性积极情绪时的心理状态。这种感觉如此超现实，以至于他感觉自己像一个旁观者，无法完全处理正在发生的事情。",
+                        "example": {
+                            "en": "When they announced my name, it felt like a dream. I think I stood up. Maybe I said thank you. I'm not really sure.",
+                            "cn": "当他们宣布我的名字时，感觉就像一场梦。我想我站了起来。也许我说了谢谢。我不太确定。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种描绘角色在极端情绪下心理状态的有效技巧。"
+                    }
+                ]
+            },
+            {
+                "id": 4,
+                "en": "I felt like I was floating. It was so weird. Like the sun was shining full force on my face and the wind was blowing. As I got closer to the stage, I saw Ms. Rubin waving at me in the front row, and then next to her was Mrs. G, who was crying hysterically—a happy crying—smiling and clapping the whole time. And as I walked up the steps to the stage, the most amazing thing happened: everyone started standing up. Not just the front rows, but the whole audience suddenly got up on their feet, whooping, hollering, clapping like crazy. It was a standing ovation. For me.",
+                "cn": "我感觉自己像在漂浮。太奇怪了。就像太阳正全力照在我的脸上，风在吹拂。当我走近舞台时，我看到鲁宾女士在第一排对我挥手，她旁边是G夫人，她正歇斯底里地哭着——是喜悦的哭泣——全程微笑着鼓掌。当我走上舞台的台阶时，最不可思议的事情发生了：所有人都开始站起来。不只是前几排，而是全体观众突然起立，大声欢呼、呐喊、疯狂鼓掌。是起立鼓掌。为我而起。",
+                "vocab": [
+                    {
+                        "word": "floating",
+                        "ph": "/ˈfloʊtɪŋ/",
+                        "pos": "adj",
+                        "mean": "漂浮的",
+                        "ex": "After receiving the good news, he had a floating sensation all day."
+                    },
+                    {
+                        "word": "full force",
+                        "ph": "/fʊl fɔːrs/",
+                        "pos": "adv phr",
+                        "mean": "全力地",
+                        "ex": "The storm hit the coast with its full force."
+                    },
+                    {
+                        "word": "hysterically",
+                        "ph": "/hɪˈsterɪkli/",
+                        "pos": "adv",
+                        "mean": "歇斯底里地",
+                        "ex": "She was laughing hysterically at his joke."
+                    },
+                    {
+                        "word": "get up on one's feet",
+                        "ph": "/ɡet ʌp ɒn wʌnz fiːt/",
+                        "pos": "idiom",
+                        "mean": "起立",
+                        "ex": "The entire stadium got up on their feet to cheer the winning goal."
+                    },
+                    {
+                        "word": "whoop",
+                        "ph": "/wuːp/",
+                        "pos": "v",
+                        "mean": "（因兴奋而）大喊",
+                        "ex": "The crowd began to whoop and cheer for their team."
+                    },
+                    {
+                        "word": "holler",
+                        "ph": "/ˈhɒlər/",
+                        "pos": "v",
+                        "mean": "（非正式）大喊",
+                        "ex": "He had to holler to be heard over the loud music."
+                    },
+                    {
+                        "word": "like crazy",
+                        "ph": "/laɪk ˈkreɪzi/",
+                        "pos": "idiom",
+                        "mean": "疯狂地",
+                        "ex": "He was working like crazy to finish the project on time."
+                    },
+                    {
+                        "word": "standing ovation",
+                        "ph": "/ˈstændɪŋ oʊˈveɪʃn/",
+                        "pos": "n phr",
+                        "mean": "（观众）起立鼓掌",
+                        "ex": "The orchestra received a well-deserved standing ovation."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "short_conclusive_fragment",
+                        "name": "结论性短句片段",
+                        "category": "S",
+                        "level": "B2",
+                        "pattern": "A short, incomplete sentence for climactic effect.",
+                        "components": [
+                            {
+                                "slot": "fragment",
+                                "role": "句子片段",
+                                "pos": [
+                                    "phr"
+                                ]
+                            }
+                        ],
+                        "function": "在描述了全体观众起立欢呼这一宏大场面之后，作者用了一个非常简短的、带有顿悟意味的句子片段 'For me.' 来作为段落的结尾。这个片段将宏大的公共事件，聚焦到了主角个人的、深刻的情感体验上，极大地增强了这一刻的冲击力和情感分量。",
+                        "example": {
+                            "en": "He had planned everything for weeks. The flowers, the music, the ring. For her.",
+                            "cn": "他已经为这一切计划了数周。鲜花、音乐、戒指。都是为了她。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过简洁来创造力量的文学技巧。"
+                    }
+                ]
+            },
+            {
+                "id": 5,
+                "en": "I walked across the stage to Mr. Tushman, who shook my hand with both his hands and whispered in my ear: \"Well done, Auggie.\" Then he placed the gold medal over my head, just like they do in the Olympics, and had me turn to face the audience. It felt like I was watching myself in a movie, almost, like I was someone else. It was like that last scene in Star Wars Episode IV: A New Hope when Luke Skywalker, Han Solo, and Chewbacca are being applauded for destroying the Death Star. I could almost hear the Star Wars theme music playing in my head as I stood on the stage.",
+                "cn": "我穿过舞台走向塔什曼先生，他用双手握住我的手，在我耳边低语：“干得好，奥吉。” 然后他把金牌挂在我的头上，就像他们在奥运会上做的那样，并让我转身面向观众。感觉几乎像是在电影里看我自己，像我是别人一样。这就像《星球大战4：新希望》的最后一幕，卢克·天行者、汉·索罗和丘巴卡因摧毁死星而受到嘉奖。当我站在舞台上时，我几乎能听到《星球大战》的主题音乐在我脑中响起。",
+                "vocab": [
+                    {
+                        "word": "well done",
+                        "ph": "/wel dʌn/",
+                        "pos": "int",
+                        "mean": "干得好",
+                        "ex": "\"Well done,\" said the teacher, \"that's a perfect score.\""
+                    },
+                    {
+                        "word": "medal",
+                        "ph": "/ˈmedl/",
+                        "pos": "n",
+                        "mean": "奖牌",
+                        "ex": "She proudly wore the gold medal she had won."
+                    },
+                    {
+                        "word": "Olympics",
+                        "ph": "/əˈlɪmpɪks/",
+                        "pos": "n",
+                        "mean": "奥运会",
+                        "ex": "Winning a gold medal at the Olympics is the highest honor for an athlete."
+                    },
+                    {
+                        "word": "applaud",
+                        "ph": "/əˈplɔːd/",
+                        "pos": "v",
+                        "mean": "鼓掌",
+                        "ex": "The audience applauded loudly at the end of the performance."
+                    },
+                    {
+                        "word": "destroy",
+                        "ph": "/dɪˈstrɔɪ/",
+                        "pos": "v",
+                        "mean": "摧毁",
+                        "ex": "The goal of the game is to destroy the enemy's base."
+                    },
+                    {
+                        "word": "Death Star",
+                        "ph": "/deθ stɑːr/",
+                        "pos": "n phr",
+                        "mean": "死星（星球大战中的武器）",
+                        "ex": "The rebels planned a daring mission to destroy the Death Star."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "cultural_allusion_for_self_framing",
+                        "name": "用于自我定位的文化典故",
+                        "category": "R",
+                        "level": "C1",
+                        "pattern": "Comparing a personal experience to a famous scene from a movie.",
+                        "components": [
+                            {
+                                "slot": "Allusion",
+                                "role": "典故",
+                                "pos": [
+                                    "n phr"
+                                ]
+                            }
+                        ],
+                        "function": "主角通过将自己获奖的场景与他最喜欢的电影《星球大战》中的英雄颁奖典礼进行比较，来理解和消化这个超现实的、压倒性的时刻。这个文化典故不仅为他的经历提供了一个框架，也让他将自己置于一个英雄的角色中，赋予了这一刻史诗般的意义。",
+                        "example": {
+                            "en": "Walking into the surprise party felt like that scene from a movie where everyone yells 'Surprise!'",
+                            "cn": "走进那个惊喜派对的感觉就像电影里每个人都大喊“惊喜！”的那个场景。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种通过引用共同文化背景来传达复杂情感和意义的有效方式。"
+                    }
+                ]
+            },
+            {
+                "id": 6,
+                "en": "I wasn't even sure why I was getting this medal, really. No, that's not true. I knew why. It's like people you see sometimes, and you can't imagine what it would be like to be that person, whether it's somebody in a wheelchair or somebody who can't talk. Only, I know that I'm that person to other people, maybe to every single person in that whole auditorium. To me, though, I'm just me. An ordinary kid. But hey, if they want to give me a medal for being me, that's okay. I'll take it. I didn't destroy a Death Star or anything like that, but I did just get through the fifth grade. And that's not easy, even if you're not me.",
+                "cn": "说真的，我甚至不确定我为什么会得到这个奖章。不，那不是真的。我知道为什么。这就像你有时看到一些人，你无法想象成为那个人会是什么样子，无论是在轮椅上的人还是不能说话的人。只不过，我知道对其他人来说，我就是那个人，也许对整个礼堂里的每一个人都是。不过，对我来说，我只是我。一个普通的小孩。但是嘿，如果他们想因为我做我自己而给我一枚奖章，那也没关系。我接受。我没有摧毁死星或类似的东西，但我确实刚刚熬过了五年级。而那并不容易，即使你不是我。",
+                "vocab": [
+                    {
+                        "word": "wheelchair",
+                        "ph": "/ˈwiːltʃer/",
+                        "pos": "n",
+                        "mean": "轮椅",
+                        "ex": "After the accident, he had to use a wheelchair."
+                    },
+                    {
+                        "word": "only",
+                        "ph": "/ˈoʊnli/",
+                        "pos": "adv",
+                        "mean": "只不过",
+                        "ex": "It's a great car. Only, I can't afford it."
+                    },
+                    {
+                        "word": "auditorium",
+                        "ph": "/ˌɔːdɪˈtɔːriəm/",
+                        "pos": "n",
+                        "mean": "礼堂",
+                        "ex": "The graduation was held in the large school auditorium."
+                    },
+                    {
+                        "word": "ordinary",
+                        "ph": "/ˈɔːrdəneri/",
+                        "pos": "adj",
+                        "mean": "普通的",
+                        "ex": "He just wanted to live a normal, ordinary life."
+                    },
+                    {
+                        "word": "take it",
+                        "ph": "/teɪk ɪt/",
+                        "pos": "phr v",
+                        "mean": "（非正式）接受它",
+                        "ex": "They offered me the job, and I decided to take it."
+                    },
+                    {
+                        "word": "get through",
+                        "ph": "/ɡet θruː/",
+                        "pos": "phr v",
+                        "mean": "熬过；完成",
+                        "ex": "It was a tough semester, but I managed to get through it."
+                    }
+                ],
+                "gram": [
+                    {
+                        "id": "self_correction_for_epiphany",
+                        "name": "用于顿悟的自我修正",
+                        "category": "R",
+                        "level": "C1",
+                        "pattern": "Initial thought (denial/confusion) -> Correction ('No, that's not true.') -> Deeper Realization.",
+                        "components": [
+                            {
+                                "slot": "Correction",
+                                "role": "修正",
+                                "pos": [
+                                    "S"
+                                ]
+                            },
+                            {
+                                "slot": "Realization",
+                                "role": "顿悟",
+                                "pos": [
+                                    "S"
+                                ]
+                            }
+                        ],
+                        "function": "这种结构模仿了一个真实的顿悟过程。主角首先表达了困惑（'I wasn't even sure why...'），然后立即进行自我修正（'No, that's not true. I knew why.'），接着阐述了一个深刻的自我认知——他理解了自己在他人眼中的特殊性。这个过程标志着他从被动接受他人目光，到主动理解并接纳自己社会角色的重大转变。",
+                        "example": {
+                            "en": "I thought I was angry at him. No, that's not true. I realized I was just angry at the situation.",
+                            "cn": "我以为我生他的气。不，那不是真的。我意识到我只是对那种情况感到生气。"
+                        },
+                        "variants": null,
+                        "constraints": "是一种在叙事中展现角色深刻内心变化的有效技巧。"
+                    }
+                ]
+            }
+        ],
+        "gram_types": {
+            "S": {
+                "en": "Sentence Structure",
+                "cn": "句子结构"
+            },
+            "T": {
+                "en": "Tense",
+                "cn": "时态"
+            },
+            "C": {
+                "en": "Clause",
+                "cn": "从句"
+            },
+            "P": {
+                "en": "Punctuation",
+                "cn": "标点"
+            },
+            "W": {
+                "en": "Word Form / Morphology",
+                "cn": "词形变化"
+            },
+            "F": {
+                "en": "Figurative Language",
+                "cn": "修辞"
+            },
+            "R": {
+                "en": "Rhetoric",
+                "cn": "修辞手法"
+            },
+            "O": {
+                "en": "Others",
+                "cn": "其他"
+            }
+        },
+        "pos_types": {
+            "n": {
+                "en": "noun",
+                "cn": "名词"
+            },
+            "v": {
+                "en": "verb",
+                "cn": "动词"
+            },
+            "adj": {
+                "en": "adjective",
+                "cn": "形容词"
+            },
+            "adv": {
+                "en": "adverb",
+                "cn": "副词"
+            },
+            "prep": {
+                "en": "preposition",
+                "cn": "介词"
+            },
+            "conj": {
+                "en": "conjunction",
+                "cn": "连词"
+            },
+            "pron": {
+                "en": "pronoun",
+                "cn": "代词"
+            },
+            "det": {
+                "en": "determiner",
+                "cn": "限定词"
+            },
+            "int": {
+                "en": "interjection",
+                "cn": "感叹词"
+            },
+            "phr": {
+                "en": "phrase",
+                "cn": "短语"
+            },
+            "phr v": {
+                "en": "phrasal verb",
+                "cn": "动词短语"
+            },
+            "n phr": {
+                "en": "noun phrase",
+                "cn": "名词短语"
+            },
+            "adj phr": {
+                "en": "adjective phrase",
+                "cn": "形容词短语"
+            },
+            "modal v": {
+                "en": "modal verb",
+                "cn": "情态动词"
+            },
+            "idiom": {
+                "en": "idiom",
+                "cn": "习语"
+            },
+            "S": {
+                "en": "sentence",
+                "cn": "句子"
+            }
+        }
     }
 ]
