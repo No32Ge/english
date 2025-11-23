@@ -150,6 +150,9 @@ pre {
 .language-json .number { color: #ff9e64; }
 .language-json .boolean { color: #ff9e64; }
 .language-json .null { color: #bb9af7; }
+.language-json .p {color: white;}
+.language-json .s2{color: #056eaa;}
+.language-json .s2{color: #65b6db;}
 
 /* 版本链接网格 */
 .version-grid {
@@ -266,10 +269,10 @@ pre {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #056eaa 0%, #65b6db 100%);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    background: linear-gradient(135deg, #4b95a2 0%, #667eea 100%);
 }
