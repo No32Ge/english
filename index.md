@@ -3,7 +3,6 @@ title: "Schala's Magic Book / 莎拉的魔法书"
 layout: default
 ---
 
-<div class="container">
 
 # Schala's Magic Book / 莎拉的魔法书
 
@@ -12,13 +11,13 @@ Sup, bro, this is Schala's Magic Book. You can click the links below to visit th
 
 <div class="version-grid">
     <div class="version-card">
-        <a href="https://english.ge32.site/mb/b1">Version 1 / 版本 1</a>
+        <a href="https://english.ge32.site/mb/b1">Version 0.1 / 版本 1 (加载速度最快)</a>
     </div>
     <div class="version-card">
-        <a href="https://english.ge32.site/mb/b2">Version 2 / 版本 2</a>
+        <a href="https://english.ge32.site/mb/b2">Version 0.2 / 版本 2(内容不完善)</a>
     </div>
     <div class="version-card">
-        <a href="https://english.ge32.site/mb/b21">Version 2-1 / 版本 2-1</a>
+        <a href="https://english.ge32.site/mb/b21">Version 0.2-1 / 版本 2-1 (只适合电脑)</a>
     </div>
 </div>
 
@@ -29,10 +28,10 @@ Sup, bro, this is Schala's Magic Book. You can click the links below to visit th
 Basically, this is a tool to help you improve your English. Some data is already included, but it doesn't matter—you can switch it whenever you want.  
 基本上，这是一个帮助你提高英语水平的工具。已经包含了一些数据，但这不重要——你可以随时切换数据。
 
-<div class="warning-box">
+
 **Important / 重要提示:** The current versions (v1, v2, v21) **only support `cn` as the translation field**. Using any other field name for translation is not supported.  
 当前版本 (v1, v2, v21) **仅支持 `cn` 作为翻译字段**。不支持使用其他字段名作为翻译。
-</div>
+
 
 The main focus is on the JSON data. If you follow the format rules, everything will work. Here's an example you can follow:  
 主要关注的是 JSON 数据。只要你遵循格式规则，一切都会正常工作。以下是一个你可以参考的示例：
@@ -104,10 +103,10 @@ The main focus is on the JSON data. If you follow the format rules, everything w
 4. The page will automatically render the JSON data as articles.  
    页面将自动将 JSON 数据渲染为文章。
 
-<div class="info-box">
+
 **Pro Tip / 专业提示:** Make sure your JSON is valid! You can use online JSON validators to check your file before importing.  
 确保你的 JSON 是有效的！你可以在导入前使用在线 JSON 验证器检查你的文件。
-</div>
+
 
 ---
 
@@ -122,6 +121,4 @@ Focus on the **JSON data** and follow the format rules—everything else is hand
 
 Remember: **only `cn` is supported for translations** in all current versions.  
 记住：在所有当前版本中，**仅支持 `cn` 作为翻译字段**。
-
-</div>
 
