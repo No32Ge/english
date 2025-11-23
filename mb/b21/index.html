@@ -72,7 +72,7 @@
                 author: "作者：Ge32（余健）",
                 purpose: "用途：学英语",
                 version: "版本：2.1",
-                description: "",
+                description: "第一次加载速度稍微慢一点。之后再次加载速度就快了",
                 where: "日志:"
             }
         };
@@ -807,36 +807,6 @@
             }
         })();
     </script>
-    <script>
-        let fontSize = 20; // 初始大小（自己改）
-        const MIN_SIZE = 12;
-        const MAX_SIZE = 32;
-
-        document.addEventListener('keydown', (e) => {
-            // 必须按住 Shift
-            if (!e.shiftKey) return;
-
-            // + 键（有些键盘是 '=+'）
-            if (e.key === '+' || (e.key === '=' && e.shiftKey)) {
-                fontSize = Math.min(fontSize + 1, MAX_SIZE);
-                applyFontSize();
-            }
-
-            // - 键
-            if (e.key === '_') { // shift + -
-                fontSize = Math.max(fontSize - 1, MIN_SIZE);
-                applyFontSize();
-            }
-        });
-
-        function applyFontSize() {
-            document.querySelectorAll('.english-text').forEach(el => {
-                el.style.fontSize = fontSize + 'px';
-            });
-        }
-    </script>
-
-
 </body>
 
 </html>

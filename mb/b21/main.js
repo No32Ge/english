@@ -21,13 +21,45 @@ import FloatingBall from "./component/common/floatingBall.js"
 import { initArtcleData } from "./article/articleInit.js"
 
 export function ready(data) {
-  console.log("模块被调用：", data);
+    console.log("模块被调用：", data);
 }
 
 
 const testData = await getLibraryItemWithChapters("/mb/library/index/libraryIndex.json", "wonder", (done, tol, url, res) => {
     document.dispatchEvent(new CustomEvent('initStep', { detail: `加载文章数据 <br>共(${done}/${tol}) ${url} ${res.ok ? "加载成功" : "<span style = 'color:red;'>res.error.errorMessage</span>"}` }));
 })
+
+// 英语字体大小切换，后期需要改，变成全局配置，也就是再下一层，防止污染字段，可以插件化
+window.englishTextSize = 20;
+const MIN_SIZE = 12;
+const MAX_SIZE = 32;
+
+document.addEventListener('keydown', (e) => {
+    // 必须按住 Shift
+    if (!e.shiftKey) return;
+
+    // + 键（有些键盘是 '=+'）
+    if (e.key === '+' || (e.key === '=' && e.shiftKey)) {
+        englishTextSize = Math.min(fontSize + 1, MAX_SIZE);
+        applyFontSize();
+    }
+
+    // - 键
+    if (e.key === '_') { // shift + -
+        englishTextSize = Math.max(fontSize - 1, MIN_SIZE);
+        applyFontSize();
+    }
+});
+
+function applyFontSize() {
+    document.querySelectorAll('.english-text').forEach(el => {
+        el.style.fontSize = fontSize + 'px';
+    });
+}
+
+// -----------------------------------------
+
+
 
 
 function initNode() {
@@ -338,14 +370,14 @@ function registerCatalogObserver() {
         for (const mutation of mutationsList) {
             // 只监听 class 变化
             if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                
+
                 // 1. 判断目录是否处于“显示”状态
                 if (catalogEl.classList.contains("show")) {
-                    
+
                     // 2. 【核心修改】使用 matchMedia 判断屏幕宽度
                     // 这行代码等同于 CSS 中的 @media (max-width: 768px)
                     if (window.matchMedia("(max-width: 768px)").matches) {
-                        
+
                         // 移除浮动菜单的 show 类
                         floatMenuEl.classList.remove("show");
                         // console.log("触发响应式规则：屏幕<=768px，目录打开导致菜单隐藏");
@@ -535,6 +567,7 @@ function renderPage() {
         // 添加英文文本
         const englishText = document.createElement('div');
         englishText.className = 'english-text';
+        englishText.style.fontSize = `${window.englishTextSize}px`;
 
         // 处理英文文本，使单词和短语都可点击
         let processedText = paragraph.en;
