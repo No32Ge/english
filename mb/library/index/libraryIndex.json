@@ -14,7 +14,8 @@
             "showProgress": true
         },
         "source": {
-            "catalog": "wonder",
+            "catalog": "",
+            "对上面的补充":"上面的哪个字段会给链接加一个前缀，但是使用第三方仓库的话，就不划算，但是不要删，后期用于拓展",
             "subPrefix": "Wonder-Part-",
             "baseURL": "https://gist.githubusercontent.com/No32Ge/f0596fc85482e18c48743ca8d9cfed63/raw/b9a0982ce1d9154e8c3cab2b252de72402bf7468/",
             "chapterCount": 8
