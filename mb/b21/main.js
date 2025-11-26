@@ -645,17 +645,18 @@ function renderPage() {
         );
 
         let copyExample = {
-            "type": "vocab",                   // 数据类型：vocab=单词/短语, grammar=语法, markdown=Markdown 内容, tip=提示等
-            "word": "string",                   // 单词或短语本身（vocab 类型必填）
-            "ph": "string",                     // 国际音标 / 发音（vocab 类型可选）
-            "pos": "string",                    // 词性，例如 n/v/adj/phr 等（vocab 类型可选）
-            "mean": "string",                   // 中文意思或解释
-            "ex": "string",                     // 英文例句或使用示例
-            "tr": "string",                     // 中文例句翻译
-            "match": ["string"],                // 在文章中出现的原始形式列表 
+            "word": "mattress",
+            "ph": "/ˈmætrəs/",
+            "pos": "n",
+            "mean": "床垫",
+            "ex": "My fingers stretch out, seeking Prim’s warmth but finding only the rough canvas cover of the mattress.",
+            "tr": "我的手指伸出去，寻找普瑞姆的温暖，却只触到床垫粗糙的帆布套。",
+            "match": [
+                "mattress"
+            ]
         }
         let jsonString = JSON.stringify(copyExample);
-        englishText.appendChild(renderCpoyBtn(` 在文章" ${paragraph.en}"中什么意思，请按照以下格式早示例输出:\n${jsonString}\n必要解释如下:\n1.type 固定为vocab\n2. pos可选择${JSON.stringify(posTypes)}`));
+        englishText.appendChild(renderCpoyBtn(` 在文章" ${paragraph.en}"中什么意思，请按照以下格式早示例输出:\n${jsonString}\n必要解释如下:\n1.type 固定为vocab\n2.match表示在文章中出现的形式 \n3. pos可选择${JSON.stringify(posTypes)}`));
         englishText.appendChild(((p) => {
             const s = document.createElement('span');
             s.innerText = TextAnalyzer.quickAnalyze(p.en).wordCount;
@@ -1130,6 +1131,7 @@ function showWordTooltip(event) {
         // 3秒后自动隐藏
         setTimeout(() => {
             tooltip.classList.remove('show');
+            tooltip.style.left = "-999px";
         }, 3000);
     }
 }
