@@ -826,28 +826,6 @@ function renderPage() {
         contentArea.appendChild(paragraphElement);
     });
 
-
-    let highlightLoaded = false;
-
-    function loadHighlightAssets() {
-        if (highlightLoaded) return;  // 避免重复加载
-        highlightLoaded = true;
-
-        // 加载 CSS
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css';
-        document.head.appendChild(link);
-
-        // 加载 JS
-        const script = document.createElement('script');
-        script.src = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js';
-        script.onload = () => console.log('Highlight.js 已加载');
-        document.head.appendChild(script);
-    }
-
-
-
     // 添加备注部分
     if (currentArticle.note) {
         const noteSection = document.createElement('div');
@@ -867,6 +845,25 @@ function renderPage() {
 
 
 
+}
+
+let highlightLoaded = false;
+
+function loadHighlightAssets() {
+    if (highlightLoaded) return;  // 避免重复加载
+    highlightLoaded = true;
+
+    // 加载 CSS
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css';
+    document.head.appendChild(link);
+
+    // 加载 JS
+    const script = document.createElement('script');
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js';
+    script.onload = () => console.log('Highlight.js 已加载');
+    document.head.appendChild(script);
 }
 
 
