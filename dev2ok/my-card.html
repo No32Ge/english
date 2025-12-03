@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot 支持演示</title>
+</head>
+<body>
+
+    <h1>ComponentLoader Slot 演示</h1>
+
+    <!-- 
+      使用 my-card 组件 
+      注意：这里的内容并没有写在 my-card.html 里，而是写在这里
+    -->
+    <my-card>
+        <!-- 对应 slot name="title" -->
+        <h3 slot="title">这是外部传入的标题</h3>
+
+        <!-- 对应默认 slot -->
+        <p>这是第一段内容，它会被投影到 card-body 中。</p>
+        <p>这是第二段内容。注意看，组件内部的“点赞”按钮逻辑依然独立工作。</p>
+        <div style="color: blue;">甚至可以插入复杂的 HTML 结构。</div>
+    </my-card>
+
+    <!-- 另一个实例，不传 title，测试默认后备内容 -->
+    <my-card>
+        <p>这个卡片没有传入标题，所以它显示了组件内部定义的“默认标题”。</p>
+    </my-card>
+
+    <script type="module">
+        import { registerComponent } from './ComponentLoader.js';
+
+        // 注册组件
+        registerComponent('my-card', './my-card.html');
+    </script>
+
+</body>
+</html>
