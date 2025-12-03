@@ -1,0 +1,30 @@
+<style>
+    .card { border: 1px solid #ccc; padding: 15px; background: #fff; border-radius: 8px; }
+    h3 { margin: 0; color: #333; }
+    .tag { background: #eee; padding: 2px 8px; border-radius: 4px; font-size: 0.8em; }
+    button { margin-top: 10px; cursor: pointer; }
+</style>
+
+<template>
+    <div class="card">
+        <!-- 这里的 name 和 role 会自动跟随标签属性变化 -->
+        <h3>姓名: <span s-text="name"></span></h3>
+        <p>角色: <span class="tag" s-text="role"></span></p>
+        
+        <!-- 点击触发 deleteUser 方法 -->
+        <button s-on="click:requestDelete">🗑️ 请求删除 (子传父)</button>
+    </div>
+</template>
+
+<script>
+    // 1. 初始化默认值 (防止还没传参时显示空)
+    $state.name = 'Waiting...';
+    $state.role = 'Visitor';
+
+    // 2. 定义行为
+    // 注意：这里我们不修改数据，而是发出事件，让父亲去改
+    $state.requestDelete = (e, { $emit }) => {
+        // 发出自定义事件 'delete-user'
+        $emit('delete-user', { reason: 'User clicked button' });
+    };
+</script>
