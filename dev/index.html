@@ -1,13 +1,83 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>全场景终极演示</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background: #f7f9fc; padding: 30px; }
+        .grid { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
+        
+        /* 日志区域样式 */
+        #console-log {
+            margin-top: 30px; padding: 15px; background: #2d3436; 
+            color: #00b894; border-radius: 8px; font-family: monospace;
+            height: 150px; overflow-y: auto;
+        }
+    </style>
+</head>
 <body>
-    <h1>最终版：单向数据流演示</h1>
-    
-    <user-card></user-card>
 
+    <!-- 1. [主页 Raw Import] 原生模板容器 -->
+    <div id="top-banner-area"></div>
+
+    <h1>🏠 智能家居控制中心</h1>
+    
+    <button onclick="masterSwitch('on')">🔥 一键全开模式</button>
+    <button onclick="masterSwitch('off')">🌑 一键全关模式</button>
+
+    <div class="grid">
+        <!-- 2. [Web Component] 实例化组件 -->
+        <!-- 传递 title 属性，它会通过 s-bind 传给内部 -->
+        <smart-room id="living-room" title="🛋️ 客厅"></smart-room>
+        
+        <smart-room id="bed-room" title="🛏️ 卧室"></smart-room>
+    </div>
+
+    <div id="console-log">等待设备操作...</div>
+
+    <!-- 引入引擎 -->
     <script type="module">
-        import { registerComponent } from './ComponentLoader.js';
-        registerComponent('user-card', './user-card.html');
+        import { registerComponent, importHtml } from './ComponentLoader.js';
+
+        // --- A. 注册组件 (Web Component) ---
+        // 只需注册最外层的 smart-room
+        registerComponent('smart-room', './smart-room.html');
+
+
+        // --- B. 加载原生模板 (Raw Import in Main) ---
+        // 需求：在主html里面导入另外两个模板(一个用到web compment，一个没有)
+        // 这里的 weather-header.html 就是那个“没有用到 web component”的纯模板
+        async function loadHeader() {
+            const headerNode = await importHtml('./weather-header.html');
+            document.getElementById('top-banner-area').appendChild(headerNode);
+            console.log("主页: 天气横幅已加载");
+        }
+        loadHeader();
+
+
+        // --- C. 交互逻辑 ---
+        const logBox = document.getElementById('console-log');
+        const room1 = document.getElementById('living-room');
+        const room2 = document.getElementById('bed-room');
+
+        // 监听组件内部冒泡出来的事件
+        // device-switch (发 toggle) -> smart-room (冒泡) -> index.html (捕获)
+        document.addEventListener('toggle-device', (e) => {
+            const msg = `[${new Date().toLocaleTimeString()}] 收到事件: 设备 "${e.detail.name}" 变成了 ${e.detail.state ? '开' : '关'}`;
+            const p = document.createElement('div');
+            p.textContent = msg;
+            logBox.prepend(p);
+        });
+
+        // 演示 Props Down: 主页控制所有房间
+        window.masterSwitch = (mode) => {
+            // 我们修改 smart-room 的 'master' 属性
+            // smart-room 内部监听 'master'，然后修改 lightStatus/acStatus
+            // lightStatus 变了 -> device-switch 接收到 active 变化 -> 自动切换开关
+            room1.setAttribute('master', mode);
+            room2.setAttribute('master', mode);
+        };
+
     </script>
 </body>
 </html>
