@@ -1,97 +1,39 @@
-<!-- my-card.html -->
-<template>
-    <div class="card">
-        <!-- 1. 具名插槽：头部 -->
-        <div class="card-header">
-            <!-- 如果外部没有传入 slot="title"，显示默认文字 -->
-            <slot name="title">默认标题</slot>
-            
-            <!-- 这里使用框架的数据绑定，证明 Slot 和 s-text 可以共存 -->
-            <span class="badge" s-text="status"></span>
-        </div>
 
-        <!-- 2. 默认插槽：内容区域 -->
-        <div class="card-body">
-            <slot></slot>
-        </div>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Slot 支持演示</title>
+</head>
+<body>
 
-        <!-- 3. 组件内部逻辑 -->
-        <div class="card-footer">
-            <span>点赞数: <b s-text="likes">0</b></span>
-            <button s-on="click:addLike">👍 点赞</button>
-        </div>
-    </div>
-</template>
+    <h1>ComponentLoader Slot 演示</h1>
 
-<style>
-    /* 组件自身样式 */
-    .card {
-        border: 1px solid #e0e0e0;
-        border-radius: 8px;
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        font-family: sans-serif;
-        max-width: 400px;
-        margin: 20px;
-        overflow: hidden;
-    }
+    <!-- 
+      使用 my-card 组件 
+      注意：这里的内容并没有写在 my-card.html 里，而是写在这里
+    -->
+    <my-card>
+        <!-- 对应 slot name="title" -->
+        <h3 slot="title">这是外部传入的标题</h3>
 
-    .card-header {
-        background: #f5f5f5;
-        padding: 10px 15px;
-        border-bottom: 1px solid #ddd;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+        <!-- 对应默认 slot -->
+        <p>这是第一段内容，它会被投影到 card-body 中。</p>
+        <p>这是第二段内容。注意看，组件内部的“点赞”按钮逻辑依然独立工作。</p>
+        <div style="color: blue;">甚至可以插入复杂的 HTML 结构。</div>
+    </my-card>
 
-    .card-body {
-        padding: 15px;
-        line-height: 1.6;
-        color: #333;
-    }
+    <!-- 另一个实例，不传 title，测试默认后备内容 -->
+    <my-card>
+        <p>这个卡片没有传入标题，所以它显示了组件内部定义的“默认标题”。</p>
+    </my-card>
 
-    .card-footer {
-        padding: 10px 15px;
-        background: #fff;
-        border-top: 1px solid #eee;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-    }
+    <script type="module">
+        import { registerComponent } from './ComponentLoader.js';
 
-    .badge {
-        background: #4caf50;
-        color: white;
-        font-size: 12px;
-        padding: 2px 6px;
-        border-radius: 4px;
-    }
+        // 注册组件
+        registerComponent('my-card', './my-card.html');
+    </script>
 
-    /* !!! 关键：给插槽进来的内容设置样式 !!! */
-    /* ::slotted(选择器) 可以选中被投影进来的元素 */
-    ::slotted(p) {
-        margin: 0 0 10px 0;
-        color: #555;
-    }
-    
-    /* 选中 name="title" 的插槽内容 */
-    ::slotted([slot="title"]) {
-        margin: 0;
-        color: #333;
-        font-size: 1.1em;
-    }
-</style>
-
-<script>
-    // 初始化数据
-    $state.likes = 0;
-    $state.status = '在线';
-
-    // 定义方法
-    $methods.addLike = () => {
-        $state.likes++;
-        if ($state.likes > 5) {
-            $state.status = '火热 🔥';
-        }
-    };
-</script>
+</body>
+</html>
