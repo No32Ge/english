@@ -1,0 +1,54 @@
+<!-- [约定] 样式定义 -->
+<style>
+    .card {
+        border: 1px solid #e2e8f0; border-radius: 8px; padding: 20px;
+        transition: all 0.3s ease; cursor: pointer;
+        background: #fff;
+    }
+    .card:hover { transform: translateY(-5px); box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+    
+    /* 动态激活样式 */
+    .card.active { border-color: #4299e1; background-color: #ebf8ff; }
+    
+    .header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-weight: bold; color: #2d3748; }
+    .content { font-size: 0.9rem; color: #718096; }
+</style>
+
+<!-- [约定] 组件结构 -->
+<!-- 点击触发 toggle 方法，s-class 根据 isSelected 状态切换 'active' 类 -->
+<div class="card" s-on="click:toggle" s-class="isSelected:active">
+    <div class="header">
+        <!-- 具名插槽 -->
+        <slot name="icon">📌</slot>
+        <!-- 绑定外部传入的 props: title -->
+        <span s-text="title">默认标题</span>
+    </div>
+    
+    <div class="content">
+        <!-- 具名插槽 -->
+        <slot name="desc">暂无描述</slot>
+    </div>
+    
+    <div style="margin-top:10px; font-size: 0.8em; color: #4299e1;" s-show="isSelected">
+        (已选中)
+    </div>
+</div>
+
+<!-- [约定] 逻辑脚本 -->
+<script>
+    // 初始化状态
+    $state.isSelected = false;
+    $state.title = "加载中..."; // 如果外部没有传 title，会显示这个，但 MutationObserver 会立刻更新它
+
+    // 定义方法
+    $methods.toggle = () => {
+        $state.isSelected = !$state.isSelected;
+        // 派发事件给父组件（虽然本例父组件没监听，但这是最佳实践）
+        $emit('card-selected', { title: $state.title, active: $state.isSelected });
+    };
+
+    // 监听属性变化 (Props)
+    $watch('title', (val) => {
+        console.log(`组件 ${val} 已加载`);
+    });
+</script>
