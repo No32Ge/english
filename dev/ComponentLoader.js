@@ -22,16 +22,16 @@ function bindDOM(shadowRoot, $state, methods, host) {
                 const updateNode = () => {
                     // 支持 user.name 这种点语法
                     const val = value.split('.').reduce((obj, k) => (obj || {})[k], $state);
-                    
+
                     if (name === 's-text') node.textContent = val ?? '';
                     else if (name === 's-value') node.value = val ?? '';
                     else if (name === 's-show') node.style.display = val ? '' : 'none';
                     else if (name === 's-class') {
-                         // 写法 s-class="isActive:my-class" 或 s-class="isActive" (类名同属性名)
-                         const [prop, cls] = value.split(':');
-                         const realVal = prop.split('.').reduce((obj, k) => (obj || {})[k], $state);
-                         const className = cls || prop; 
-                         realVal ? node.classList.add(className) : node.classList.remove(className);
+                        // 写法 s-class="isActive:my-class" 或 s-class="isActive" (类名同属性名)
+                        const [prop, cls] = value.split(':');
+                        const realVal = prop.split('.').reduce((obj, k) => (obj || {})[k], $state);
+                        const className = cls || prop;
+                        realVal ? node.classList.add(className) : node.classList.remove(className);
                     }
                     else if (name.startsWith('s-bind:')) {
                         node.setAttribute(name.slice(7), val ?? '');
@@ -45,7 +45,7 @@ function bindDOM(shadowRoot, $state, methods, host) {
 
                 // 初始化执行
                 updateNode();
-                
+
                 // s-bind 用于子组件通信，保留；其他指令移除以保持 DOM 干净
                 if (!name.startsWith('s-bind:')) node.removeAttribute(name);
             }
@@ -66,7 +66,7 @@ function bindDOM(shadowRoot, $state, methods, host) {
             const prop = node.getAttribute('s-model');
             node.value = $state[prop] || '';
             node.addEventListener('input', (e) => $state[prop] = e.target.value);
-            
+
             const updateInput = () => { if (node.value !== $state[prop]) node.value = $state[prop] ?? ''; };
             if (!host._subscribers[prop]) host._subscribers[prop] = new Set();
             host._subscribers[prop].add(updateInput);
@@ -95,11 +95,11 @@ export function registerComponent(tagName, url) {
     if (customElements.get(tagName)) return;
 
     class NativeComponent extends HTMLElement {
-        constructor() { 
-            super(); 
+        constructor() {
+            super();
             this.attachShadow({ mode: 'open' });
-            this._subscribers = {}; 
-            this._watchers = {};    
+            this._subscribers = {};
+            this._watchers = {};
         }
 
         async connectedCallback() {
@@ -129,7 +129,7 @@ export function registerComponent(tagName, url) {
             // 初始化系统
             const data = {};
             const methods = {};
-            
+
             const $state = new Proxy(data, {
                 get: (target, key) => target[key],
                 set: (target, key, value) => {
@@ -146,23 +146,21 @@ export function registerComponent(tagName, url) {
                 if (!this._watchers[key]) this._watchers[key] = [];
                 this._watchers[key].push(cb);
             };
-            
-            // 为了方便使用，将 _set 挂载到 host 上
+
+            // 挂载 _set
             this._set = (key, val) => $state[key] = val;
 
-            // 注入变量并执行脚本
-            const runScript = new Function('$scope', '$host', '$state', '$methods', '$emit', '$watch', '$loader', 
-                `"use strict";\n${scriptContent}`);
-            
-            const tools = { registerComponent, importHtml };
+            // ✅ 先执行脚本，保证 $methods 被填充
             try {
-                runScript(this.shadowRoot, this, $state, methods, $emit, $watch, tools);
-            } catch(e) { console.error(`Script Error in ${tagName}:`, e); }
+                const runScript = new Function('$scope', '$host', '$state', '$methods', '$emit', '$watch', '$loader',
+                    `"use strict";\n${scriptContent}`);
+                runScript(this.shadowRoot, this, $state, methods, $emit, $watch, { registerComponent, importHtml });
+            } catch (e) { console.error(`Script Error in ${tagName}:`, e); }
 
-            // 绑定 DOM
+            // ✅ 然后绑定 DOM，这样 s-on 可以正确找到 methods
             bindDOM(this.shadowRoot, $state, methods, this);
 
-            // Props 监听 (自动同步外部属性)
+            // Props 监听
             this.observer = new MutationObserver((mutations) => {
                 mutations.forEach(m => {
                     if (m.type === 'attributes') $state[m.attributeName] = this.getAttribute(m.attributeName);
@@ -170,9 +168,10 @@ export function registerComponent(tagName, url) {
             });
             this.observer.observe(this, { attributes: true });
             Array.from(this.attributes).forEach(attr => $state[attr.name] = attr.value);
-            
+
             this.dispatchEvent(new Event('loaded'));
         }
+
 
         disconnectedCallback() {
             if (this.observer) this.observer.disconnect();
