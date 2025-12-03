@@ -20,7 +20,6 @@
 
 <!-- 新增/编辑弹窗 -->
 <ui-modal s-show="showModal" title="单词编辑">
-    <!-- 插槽：放入表单组件 -->
     <ui-form s-bind:form-data="currentEditJson" s-on="submit:onFormSubmit" s-on="cancel:closeModal"></ui-form>
 </ui-modal>
 

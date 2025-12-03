@@ -1,34 +1,46 @@
 <style>
-    .overlay { 
-        position: fixed; top: 0; left: 0; width: 100%; height: 100%; 
-        background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center;
-        backdrop-filter: blur(2px); z-index: 100;
+    /* 宿主样式：默认铺满 */
+    :host {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        z-index: 999; pointer-events: none; /* 让宿主不拦截点击，除非点到 overlay */
     }
-    .modal { background: white; width: 90%; max-width: 500px; border-radius: 12px; padding: 25px; box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-    .modal-header { font-size: 1.25rem; font-weight: bold; margin-bottom: 20px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+    
+    .overlay { 
+        width: 100%; height: 100%; 
+        background: rgba(0,0,0,0.5); 
+        display: flex; align-items: center; justify-content: center;
+        backdrop-filter: blur(2px);
+        pointer-events: auto; /* 恢复点击 */
+    }
+    
+    .modal { 
+        background: white; width: 90%; max-width: 500px; 
+        border-radius: 12px; padding: 25px; 
+        box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); 
+        animation: popIn 0.3s cubic-bezier(0.18, 0.89, 0.32, 1.28);
+    }
+
+    .modal-header { 
+        font-size: 1.25rem; font-weight: bold; margin-bottom: 20px; 
+        border-bottom: 1px solid #eee; padding-bottom: 10px; 
+        color: #333;
+    }
+
+    @keyframes popIn {
+        from { opacity: 0; transform: scale(0.9) translateY(20px); }
+        to { opacity: 1; transform: scale(1) translateY(0); }
+    }
 </style>
 
-<!-- 只有当 isVisible 为 true 时显示 -->
-<div class="overlay" s-show="isVisible">
+<!-- 移除内部的 s-show，直接展示。显隐完全由 <ui-modal s-show="..."> 控制 -->
+<div class="overlay">
     <div class="modal">
         <div class="modal-header" s-text="title">默认标题</div>
-        <!-- 插槽：外部内容（表单）将显示在这里 -->
         <slot></slot>
     </div>
 </div>
 
 <script>
-    $state.isVisible = false;
-    
-    // 监听外部的 s-show 属性 (注意：Core库里 s-show 是指令，但这里我们通过 props 传递状态来控制内部 CSS)
-    // 实际上 Core 库会自动处理宿主元素的 display。
-    // 这里我们做一个 trick：我们监听外部传给组件的 's-show' 是不起作用的（因为那是指令），
-    // 但通常我们会传一个 prop 比如 'visible'。
-    // *修正*：为了演示方便，我们在 app-root 里使用的是 s-show 控制组件本身的 display。
-    // 但如果想做内部动画，我们需要一个 prop。
-    
-    // 在这个案例中，我们在 app-root 使用了 s-show="showModal" 在 <ui-modal> 标签上。
-    // 这会直接控制 <ui-modal> 元素的 display: none/block。
-    // 所以内部其实不需要逻辑来控制显示，内部始终显示即可，外部控制了 Host 的可见性。
-    // 但为了让内部布局 flex 生效，我们内部默认写死显示，外部控制 Host。
+    // 内部不需要逻辑，只负责接收 title 属性
+    // ComponentLoader 会自动把 attributes 同步到 $state
 </script>

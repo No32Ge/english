@@ -1,32 +1,31 @@
 <style>
-    .list-container { display: flex; flex-direction: column; gap: 20px; }
+    .list-container { display: flex; flex-direction: column; gap: 20px; padding-bottom: 100px; }
 </style>
 
 <div class="list-container" id="container"></div>
 
 <script>
-    // 注册单个卡片组件
     $loader.registerComponent('comp-word-card', './components/comp-word-card.html');
 
-    // 监听 list-data 属性 (JSON字符串)
     $watch('list-data', (newVal) => {
-        renderList(JSON.parse(newVal || '[]'));
+        try {
+            const list = JSON.parse(newVal || '[]');
+            renderList(list);
+        } catch(e) { console.error('JSON Parse Error:', e); }
     });
 
     function renderList(list) {
         const container = $scope.querySelector('#container');
-        container.innerHTML = ''; // 清空
+        container.innerHTML = ''; 
 
         list.forEach(item => {
-            // 动态创建 Web Component
             const card = document.createElement('comp-word-card');
             
-            // 传递数据：将对象序列化存入 dataset 或 attribute
-            // 为了传递复杂对象，推荐使用 attribute 传 JSON
+            // 关键：将对象转为单引号包裹的 JSON 字符串，防止 HTML 属性解析错误
+            // 或者直接使用 DOM 属性赋值（由于 ComponentLoader V3 监听 attribute，所以我们用 setAttribute）
             card.setAttribute('card-data', JSON.stringify(item));
             
-            // 监听子组件冒泡上来的事件，并继续向上抛出
-            // 这里使用了原生的 addEventListener，因为是动态创建的
+            // 手动绑定事件
             card.addEventListener('edit', (e) => $emit('edit', e.detail));
             card.addEventListener('delete', (e) => $emit('delete', e.detail));
 
