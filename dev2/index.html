@@ -2,31 +2,27 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>V2.0 高性能引擎测试</title>
+    <title>V2.1 修复版测试</title>
 </head>
 <body>
 
-    <h1>🚀 V2.0 引擎性能测试</h1>
-    <p>打开控制台，查看 Network 和 DOM 结构。</p>
-    <p>你会发现 s-text 等属性在 DOM 中消失了（编译期已提取），页面更干净。</p>
+    <h1>🚀 V2.1 修复对象更新问题</h1>
 
-    <!-- 使用组件 -->
     <profile-card username="John Doe"></profile-card>
 
     <div style="margin-top: 20px;">
-        <label>外部控制名字:</label>
+        <label>修改名字:</label>
         <input type="text" id="nameInput" placeholder="输入名字...">
     </div>
 
-    <!-- 引入 V2 引擎 -->
     <script type="module">
         import { registerComponent } from './ComponentLoader.js';
         registerComponent('profile-card', './profile-card.html');
 
-        // 外部交互测试
         const input = document.getElementById('nameInput');
         const card = document.querySelector('profile-card');
         
+        // 模拟外部修改属性
         input.addEventListener('input', (e) => {
             card.setAttribute('username', e.target.value);
         });

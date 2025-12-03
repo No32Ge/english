@@ -1,63 +1,59 @@
 <style>
-    .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 300px; font-family: sans-serif; }
-    .info { margin-bottom: 15px; }
-    button { cursor: pointer; padding: 5px 10px; }
+    .card { border: 1px solid #ddd; padding: 20px; border-radius: 8px; width: 300px; font-family: sans-serif; background: #fff;}
+    .info { margin-bottom: 15px; padding: 10px; background: #f9f9f9; border-radius: 4px;}
+    button { cursor: pointer; padding: 5px 10px; margin-right: 5px;}
 </style>
 
 <template>
     <div class="card">
-        <!-- 支持 s-html 用于渲染富文本 (小心使用) -->
-        <h3 s-html="title"></h3>
+        <h3>用户资料 V2.1</h3>
         
         <div class="info">
-            <!-- [新特性] 支持点语法访问深层对象 -->
+            <!-- 绑定深层数据 -->
             <p>Name: <b s-text="user.name"></b></p>
             <p>Age: <span s-text="user.age"></span></p>
         </div>
 
         <p>Clicks: <span s-text="count">0</span></p>
 
-        <!-- 事件绑定保持不变 -->
         <button s-on="click:addAge">年龄 +1</button>
         <button s-on="click:addCount">点击 +1</button>
     </div>
 </template>
 
 <script>
-    // 1. 数据 (State)
-    $state.title = '<u>用户资料 V2.0</u>'; // 测试 s-html
+    // 1. 初始化数据
     $state.count = 0;
     
-    // [新特性] 复杂对象
+    // 初始化复杂对象
     $state.user = {
-        name: 'Alex',
-        age: 25
+        name: 'Guest',
+        age: 18
     };
 
-    // 2. 方法 (Methods) - 这是一个更规范的改动
-    // 那个 AI 建议把方法和数据分开，这样性能更好
+    // 2. 定义方法
     $methods.addAge = () => {
-        // 修改深层数据，界面也会自动更新
-        // 注意：这里需要触发 user 的更新，V2.0 简单版需要重新赋值 user 或者手动触发
-        // 为了简单演示 V2.0 逻辑：
+        // 方法 A (推荐): 使用解构产生新对象，确保数据纯净
+        // $state.user = { ...$state.user, age: $state.user.age + 1 };
+        
+        // 方法 B (兼容): 直接修改引用，V2.1 引擎已支持
         const u = $state.user;
         u.age++;
-        $state.user = u; // 触发 setter 更新
+        $state.user = u; 
+        
+        console.log('Age updated to:', u.age);
     };
 
     $methods.addCount = () => {
         $state.count++;
-        // 就算你在这一帧里写 100 次 count++
-        // DOM 也只会更新一次 (Batching 生效)
-        console.log('Count changed');
     };
     
-    // Props 监听演示
+    // 监听外部传入的 props 'username'
     $watch('username', (val) => {
-        const u = $state.user;
-        u.name = val;
-        $state.user = u;
+        if(val) {
+            const u = $state.user;
+            u.name = val;
+            $state.user = u;
+        }
     });
-
-    console.log('Profile Card Loaded (V2 Engine)');
 </script>
