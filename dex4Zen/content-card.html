@@ -1,0 +1,48 @@
+<style>
+    :host { display: block; margin-bottom: 20px; }
+    .card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        overflow: hidden;
+        border: 1px solid #eee;
+    }
+    .header {
+        background: #f8fafc;
+        padding: 15px;
+        border-bottom: 1px solid #eee;
+        font-weight: bold;
+        color: #333;
+    }
+    .body { padding: 20px; color: #555; line-height: 1.6; }
+    .footer {
+        padding: 15px;
+        background: #f8fafc;
+        border-top: 1px solid #eee;
+        text-align: right;
+    }
+</style>
+
+<template>
+    <div class="card">
+        <!-- 具名插槽: header -->
+        <div class="header">
+            <slot name="header">默认标题</slot>
+        </div>
+        
+        <!-- 默认插槽: body -->
+        <div class="body">
+            <slot></slot>
+        </div>
+        
+        <!-- 具名插槽: footer -->
+        <div class="footer">
+            <slot name="footer"></slot>
+        </div>
+    </div>
+</template>
+
+<script>
+    // 纯布局组件，甚至不需要逻辑
+    console.log('Card loaded');
+</script>

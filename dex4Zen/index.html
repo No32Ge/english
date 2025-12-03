@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>V3.0 Zen Mode + Slots</title>
+    <style>
+        body { font-family: sans-serif; background: #f0f2f5; padding: 40px; }
+        .highlight { color: #e74c3c; font-weight: bold; }
+        button { padding: 8px 16px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>🧩 组件复用 (Slot 演示)</h1>
+
+    <!-- 1. 注册组件 -->
+    <script type="module">
+        import { registerComponent } from './ComponentLoader.js';
+        registerComponent('content-card', './content-card.html');
+    </script>
+
+    <!-- 2. 使用组件：产品卡片 -->
+    <content-card>
+        <!-- 插入到 name="header" 的位置 -->
+        <span slot="header">📱 iPhone 15 Pro</span>
+        
+        <!-- 插入到默认位置 -->
+        <p>这是最新的苹果手机，采用钛金属机身。</p>
+        <p class="highlight">价格: $999</p>
+        
+        <!-- 插入到 name="footer" 的位置 -->
+        <button slot="footer">立即购买</button>
+    </content-card>
+
+    <!-- 3. 复用组件：用户警告 -->
+    <content-card>
+        <span slot="header" style="color:red">⚠️ 系统警告</span>
+        
+        <p>检测到您的账户在异地登录。</p>
+        
+        <div slot="footer">
+            <button>忽略</button>
+            <button style="background:red; color:white">修改密码</button>
+        </div>
+    </content-card>
+
+</body>
+</html>
