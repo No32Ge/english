@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Bug 修复验证</title>
+</head>
+<body>
+
+    <h1>V3.0 功能验证</h1>
+    <p>请点击下面的按钮，如果数字变化，说明 Bug 已修复。</p>
+
+    <!-- 使用组件 -->
+    <test-card></test-card>
+
+    <script type="module">
+        import { registerComponent } from './ComponentLoader.js';
+        
+        // 注册组件
+        registerComponent('test-card', './test-card.html');
+    </script>
+    
+</body>
+</html>

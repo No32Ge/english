@@ -1,0 +1,63 @@
+<style>
+    .box { 
+        border: 2px solid #333; 
+        padding: 20px; 
+        width: 300px; 
+        border-radius: 10px;
+        font-family: sans-serif;
+    }
+    button { padding: 5px 15px; cursor: pointer; font-size: 16px; margin: 0 5px; }
+    input { padding: 5px; width: 200px; margin-top: 10px; }
+    .highlight { color: red; font-weight: bold; }
+</style>
+
+<template>
+    <div class="box">
+        <h3>测试卡片</h3>
+        
+        <!-- 测试 1: 数字改变 -->
+        <p>当前数字: <span s-text="count" class="highlight">0</span></p>
+        
+        <div>
+            <!-- s-on 必须能触发 increment/decrement -->
+            <button s-on="click:decrement">-</button>
+            <button s-on="click:increment">+</button>
+        </div>
+
+        <hr>
+
+        <!-- 测试 2: 名字改变 (双向绑定) -->
+        <p>你好, <span s-text="username">Guest</span></p>
+        
+        <!-- s-model 必须能同步上面的文字 -->
+        <input type="text" s-model="username" placeholder="修改名字...">
+        
+        <p>
+            <button s-on="click:resetName">重置名字</button>
+        </p>
+    </div>
+</template>
+
+<script>
+    // 初始化数据
+    $state.count = 0;
+    $state.username = "Guest";
+
+    // 定义方法
+    $methods.increment = () => {
+        $state.count++; 
+        console.log("增加", $state.count);
+    };
+
+    $methods.decrement = () => {
+        $state.count--;
+        console.log("减少", $state.count);
+    };
+
+    $methods.resetName = () => {
+        $state.username = "Guest";
+        console.log("名字已重置");
+    };
+    
+    console.log("组件加载完成");
+</script>
