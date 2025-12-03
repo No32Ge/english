@@ -2,57 +2,81 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>全场景导入演示</title>
+    <title>全场景终极演示</title>
     <style>
-        body { font-family: sans-serif; background: #f4f6f8; padding: 40px; }
-        h1 { color: #333; margin-bottom: 30px; }
-        .grid { display: flex; gap: 20px; flex-wrap: wrap; }
+        body { font-family: 'Segoe UI', sans-serif; background: #f7f9fc; padding: 30px; }
+        .grid { display: flex; gap: 30px; flex-wrap: wrap; margin-top: 20px; }
         
-        #banner-container {
-            width: 100%; max-width: 620px;
+        /* 日志区域样式 */
+        #console-log {
+            margin-top: 30px; padding: 15px; background: #2d3436; 
+            color: #00b894; border-radius: 8px; font-family: monospace;
+            height: 150px; overflow-y: auto;
         }
     </style>
 </head>
 <body>
 
-    <h1>Component Loader 全场景演示</h1>
+    <!-- 1. [主页 Raw Import] 原生模板容器 -->
+    <div id="top-banner-area"></div>
+
+    <h1>🏠 智能家居控制中心</h1>
+    
+    <button onclick="masterSwitch('on')">🔥 一键全开模式</button>
+    <button onclick="masterSwitch('off')">🌑 一键全关模式</button>
 
     <div class="grid">
-        <!-- [演示] 场景 1: 使用 Web Component -->
-        <!-- 这里的 <user-card> 内部还自动导入了 <status-badge> -->
-        <user-card name="Alice" job="前端架构师"></user-card>
+        <!-- 2. [Web Component] 实例化组件 -->
+        <!-- 传递 title 属性，它会通过 s-bind 传给内部 -->
+        <smart-room id="living-room" title="🛋️ 客厅"></smart-room>
         
-        <!-- 复用 -->
-        <user-card name="Bob" job="产品经理"></user-card>
+        <smart-room id="bed-room" title="🛏️ 卧室"></smart-room>
     </div>
 
-    <!-- [演示] 场景 2: 这是一个普通的 div，我们将把原生模板导入到这里 -->
-    <div id="banner-container"></div>
+    <div id="console-log">等待设备操作...</div>
 
-    <!-- 脚本区域 -->
+    <!-- 引入引擎 -->
     <script type="module">
-        // 导入工具
         import { registerComponent, importHtml } from './ComponentLoader.js';
 
-        // --- 动作 A: 注册 Web Component ---
-        // 只要注册了，页面上所有的 <user-card> 就会自动变成组件
-        // 注意：我们只注册了父组件，子组件 status-badge 是在 user-card 内部注册的
-        registerComponent('user-card', './user-card.html');
+        // --- A. 注册组件 (Web Component) ---
+        // 只需注册最外层的 smart-room
+        registerComponent('smart-room', './smart-room.html');
 
-        // --- 动作 B: 导入原生 HTML 片段 (非组件) ---
-        // 适用于你需要手动控制何时、何地插入一段 HTML
-        async function loadBanner() {
-            // 1. 获取 DOM 节点 (Fragment)
-            const bannerNode = await importHtml('./daily-banner.html');
-            
-            // 2. 手动添加到页面指定位置
-            document.getElementById('banner-container').appendChild(bannerNode);
-            
-            console.log("原生 Banner 已插入页面");
+
+        // --- B. 加载原生模板 (Raw Import in Main) ---
+        // 需求：在主html里面导入另外两个模板(一个用到web compment，一个没有)
+        // 这里的 weather-header.html 就是那个“没有用到 web component”的纯模板
+        async function loadHeader() {
+            const headerNode = await importHtml('./weather-header.html');
+            document.getElementById('top-banner-area').appendChild(headerNode);
+            console.log("主页: 天气横幅已加载");
         }
+        loadHeader();
 
-        // 执行动作 B
-        loadBanner();
+
+        // --- C. 交互逻辑 ---
+        const logBox = document.getElementById('console-log');
+        const room1 = document.getElementById('living-room');
+        const room2 = document.getElementById('bed-room');
+
+        // 监听组件内部冒泡出来的事件
+        // device-switch (发 toggle) -> smart-room (冒泡) -> index.html (捕获)
+        document.addEventListener('toggle-device', (e) => {
+            const msg = `[${new Date().toLocaleTimeString()}] 收到事件: 设备 "${e.detail.name}" 变成了 ${e.detail.state ? '开' : '关'}`;
+            const p = document.createElement('div');
+            p.textContent = msg;
+            logBox.prepend(p);
+        });
+
+        // 演示 Props Down: 主页控制所有房间
+        window.masterSwitch = (mode) => {
+            // 我们修改 smart-room 的 'master' 属性
+            // smart-room 内部监听 'master'，然后修改 lightStatus/acStatus
+            // lightStatus 变了 -> device-switch 接收到 active 变化 -> 自动切换开关
+            room1.setAttribute('master', mode);
+            room2.setAttribute('master', mode);
+        };
 
     </script>
 </body>
