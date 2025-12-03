@@ -6,7 +6,7 @@
 <script>
   $state.childCounts = { 1: 0, 2: 0 };
 
-  const counters = shadowRoot.querySelectorAll('my-counter');
+  const counters = $scope.querySelectorAll('my-counter');
   counters.forEach(counter => {
     counter.addEventListener('update', (e) => {
       const id = counter.getAttribute('id');
