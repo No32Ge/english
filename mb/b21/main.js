@@ -61,13 +61,16 @@ function applyFontSize() {
 
 
 async function initNode() {
-    const addGrammarModal = await importHtml("./template/addGram.html");
+     registerComponent('add-gram', './template/addGram.html');
+    // const addGrammarModal = await importHtml("./template/addGram.html");
+    
+    const addGrams = document.createElement("add-gram");
     document.dispatchEvent(new CustomEvent('initStep', { detail: "开始初始化" }));
     buildCatalog?.();
     const menu = initMenuDev?.(null)
     document.body.appendChild(exportModalElement);
     document.body.appendChild(addArticlesFromJs)
-    document.body.appendChild(addGrammarModal);
+    document.body.appendChild(addGrams);
     document.body.appendChild(importArticlesModal);
     document.body.appendChild(addVocabModal);
     // 创建悬浮球实例
