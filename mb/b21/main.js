@@ -203,17 +203,17 @@ async function main() {
     await init();
     console.log('初始化');
     // 模块脚本执行时，DOM 已经准备完毕；直接运行初始化逻辑
-    initApp();
+    await initApp();
     console.log('初始化结束');
 }
 
 // ======== 主逻辑封装 ======== 这里面的功能基本上无需拓展，因此写死就很好
-function initApp() {
+async function initApp() {
     // 初始化所有文章数据
     if (articlesData) {
         articlesData.forEach(article => initArtcleData(article));
     }
-    initNode?.();
+    await initNode?.();
     initProgress?.();
     buildWordDictionary?.();
     // renderPage?.();
