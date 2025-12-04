@@ -597,6 +597,8 @@
 
     // 自动注入示例
     function autoInject() {
+
+
         // 检查页面是否已经有播放器容器
         if (!document.getElementById('youtube-player-container')) {
             // 创建容器
@@ -633,12 +635,27 @@
         }
     }
 
-    // 页面加载完成后自动注入
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', autoInject);
-    } else {
-        autoInject();
+    function isTouchDevice() {
+        return 'ontouchstart' in window ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
     }
+
+    if (!isTouchDevice) {
+        // 页面加载完成后自动注入
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', autoInject);
+        } else {
+            autoInject();
+        }
+    } else {
+        console.log("不支持手机端");
+        document.getElementById("yt").remove();
+    }
+
+
+
+
 
     console.log('%cGE32 YouTube播放器脚本插件', "font-size: 30px; color: green; font-weight: bold;");
     console.log('%c作者公众号 ： Ge32', "font-size: 30px; color: black; font-weight: bold;");

@@ -16,7 +16,7 @@ async function copyToClipboard(id) {
     }
     const htmlContent = filter(output.innerHTML.replace(/\s+/g, ' ').trim());
 
-    console.log("测试导出", htmlContent)
+    
 
     if (navigator.clipboard && window.ClipboardItem) {
         try {
@@ -25,7 +25,7 @@ async function copyToClipboard(id) {
 
             await navigator.clipboard.write([item]);
 
-            showMessage("复制成功!");
+            showMessage("新方法复制成功!");
             return;
         } catch (err) {
             // 写入失败则继续 fallback
@@ -53,7 +53,7 @@ async function copyToClipboard(id) {
         selection.removeAllRanges();
         document.body.removeChild(tempElement);
 
-        showMessage("复制成功!");
+        showMessage("旧方案复制成功!");
     } catch (err) {
         showMessage("复制失败 " + err);
     }
