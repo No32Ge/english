@@ -19,7 +19,7 @@ function compileTemplate(htmlText) {
     const script = doc.querySelector('script');
     const content = template ? template.content : doc.body;
     
-    const bindings = {}; 
+    const bindings = {}                            ; 
     let uidCounter = 0;
 
     function traverse(node) {
@@ -151,6 +151,8 @@ function initReactor(shadowRoot, compiledData, host) {
         const runScript = new Function('$scope', '$host', '$state', '$methods', '$emit', '$watch', '$loader', scriptContent);
         const tools = { registerComponent, importHtml };
         runScript(shadowRoot, host, $state, methods, $emit, $watch, tools);
+        // host.$methods = methods;   // 把内部方法暴露给组件实例
+
     }
     
     host._updateState = (key, value) => { $state[key] = value; };

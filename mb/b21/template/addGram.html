@@ -173,7 +173,7 @@
     }
 </style>
 <template>
-    <div id="add-grammar-modal" class="modal-overlay">
+    <div id="add-grammar-modal" class="modal-overlay" s-class="show">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">语法点</h3>
@@ -204,4 +204,14 @@
             </div>
         </div>
     </div>
-</template
+</template>
+
+<script>
+    // 初始化数据
+    $state.show = false;
+
+    // 方法
+    $methods.toggle = () => {
+        $state.show = !$state.show;
+    };
+</script>

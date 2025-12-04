@@ -65,6 +65,7 @@ async function initNode() {
     // const addGrammarModal = await importHtml("./template/addGram.html");
     
     const addGrams = document.createElement("add-gram");
+    addGrams.id = "add-grammar-component";
     document.dispatchEvent(new CustomEvent('initStep', { detail: "开始初始化" }));
     buildCatalog?.();
     const menu = initMenuDev?.(null)
@@ -91,7 +92,7 @@ async function initNode() {
             console.log("拖动事件");
         }
     });
-    document.getElementById("")
+    
     document.dispatchEvent(new CustomEvent('initStep', { detail: "基本功能加载完成" }));
 
     document.getElementById("toggle-explanations").addEventListener('change', function () {
@@ -642,7 +643,7 @@ function renderPage() {
         };
 
         englishText.appendChild(
-            createCircleButton('G', () => showAddGrammarModal(paragraph))
+            createCircleButton('G', () => addGrams.toggle())
         );
 
         englishText.appendChild(
